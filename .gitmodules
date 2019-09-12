@@ -1,0 +1,6 @@
+[submodule "bullet-train-api"]
+	path = bullet-train-api
+	url = https://github.com/SolidStateGroup/bullet-train-api.git
+[submodule "bullet-train-frontend"]
+	path = bullet-train-frontend
+	url = https://github.com/SolidStateGroup/bullet-train-frontend.git
