@@ -8,7 +8,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: bullet-train-api/docker/Dockerfile
+      dockerfile: api-dockerfile
     command: bash -c "pipenv run python manage.py migrate --noinput
               && pipenv run python manage.py collectstatic --noinput
               && pipenv run gunicorn --bind 0.0.0.0:8000 -w 3 app.wsgi"
@@ -24,3 +24,10 @@ services:
       - db
     links:
       - db:db
+  web:
+    build:
+      context: .
+      dockerfile: frontend-dockerfile
+    command: bash -c "cd /usr/src && npm run dev"
+    ports:
+      - "8080:8080"

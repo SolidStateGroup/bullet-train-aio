@@ -1,0 +1,6 @@
+FROM node:10
+
+WORKDIR /usr/src
+COPY bullet-train-frontend .
+COPY project_dev.js ./env/project_dev.js
+RUN npm install
